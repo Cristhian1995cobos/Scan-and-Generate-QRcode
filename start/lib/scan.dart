@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
-
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -16,12 +15,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-  }
-
-  startBarcodeScanStream() async {
-    FlutterBarcodeScanner.getBarcodeStreamReceiver(
-            "#ff6666", "Cancel", true, ScanMode.BARCODE)
-        .listen((barcode) => print(barcode));
   }
 
   Future<void> scanQR() async {
@@ -45,7 +38,6 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> scanBarcodeNormal() async {
     String barcodeScanRes;
     // Platform messages may fail, so we use a try/catch PlatformException.
@@ -72,30 +64,20 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('QR Generator'),
-        ),        
+          title: Text('QR Scanner'),
+        ),
         body: Center(
-          child:    
-           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
+            child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
               RaisedButton(
-                onPressed: () => scanBarcodeNormal(),
-
-                child: Text("Start barcode scan")),
-              RaisedButton(
-                onPressed: () => scanQR(),
-                child: Text("Start QR scan")),
-              RaisedButton(
-                
-                onPressed: () => startBarcodeScanStream(),
-                child: Text("Start barcode scan stream")),
-              Text('Scan result : $_scanBarcode\n',
-                style: TextStyle(fontSize: 20))
-            ]
-        )
-        )
-    );
+                  onPressed: () => scanBarcodeNormal(),
+                  child: Text("Barcode scan")),
+              RaisedButton(onPressed: () => scanQR(), child: Text("QR scan")),
+              Container(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Text('Scan result : $_scanBarcode\n',
+                      style: TextStyle(fontSize: 20)))
+            ])));
   }
 }

@@ -27,7 +27,7 @@ class _MainScreenState extends State<Generate> {
   Widget build(BuildContext context) {
     final message =
         // ignore: lines_longer_than_80_chars
-        'Holii Cris ';
+        'Hello World ';
 
     final qrFutureBuilder = FutureBuilder(
       future: _loadOverlayImage(),
@@ -52,48 +52,49 @@ class _MainScreenState extends State<Generate> {
         );
       },
     );
-return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text('QR Generator'),
-        ),
-        body: Center(
-            child:
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                // crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Expanded(
-                  child: Center(
-                  child: Container(
-                  width: 280,
-                  child: qrFutureBuilder,
-                  ),),
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: message
-                  ),
-                  controller: myController,
-                  onChanged: (value) {
-                    setState(() {
-                      _dataString = myController.text;
-                    });
-                  },
-                ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40)
-                    .copyWith(bottom: 40),
-                child: Text(_dataString),
+    var inputDecoration = InputDecoration(hintText: message,
+              border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue,width: 3, style: BorderStyle.solid)),
+              );
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('QR Generator'),
+      ),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Expanded(
+            child: Center(
+              child: Container(
+                width: 280,
+                child: qrFutureBuilder,
               ),
-
-            ],
-          )
-        ),
-      );
-    }
-
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal:20).copyWith(top:20.0),
+            child: TextField(
+              decoration: inputDecoration,
+              controller: myController,
+              onChanged: (value) {
+                setState(() {
+                  _dataString = myController.text;
+                });
+              },
+            ),
+          ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40)
+          //       .copyWith(bottom: 40),
+          //   child: Text(_dataString),
+          // ),
+        ],
+      )),
+    );
+  }
 
   Future<ui.Image> _loadOverlayImage() async {
     final completer = Completer<ui.Image>();
