@@ -18,6 +18,9 @@ class _Home extends State<HomeScreen> {
         appBar: AppBar(title: Text("QR SCAN AND GENERATOR"),),
         body: Builder(builder: (BuildContext context) {
           return Container(
+
+
+            
             alignment: Alignment.center,
             child: Flex(
               direction: Axis.vertical,
