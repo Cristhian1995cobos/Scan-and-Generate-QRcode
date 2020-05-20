@@ -16,7 +16,7 @@ In this screen we have buttons for the options of Barcode Scan and QR code Scan.
 ### Generate Screen 
 This screen show a QRcode wich represent the text "Hello World", in the bottom of the page there is a label input. The Qrcode will be generated with the information placed on the input. The maxime length for Qrcode generator is 85 chacarters.
 
-### Screens
+### ScreenShot
 
 <p align="center">
 <img src="images/Screenshot_20200519_005206_com.example.start.jpg" class="img-responsive" height="400"> 
