@@ -19,10 +19,10 @@ This screen show a QRcode wich represent the text "Hello World", in the bottom o
 ### Screens
 
 <p align="center">
-<img src="images/Screenshot_20200519_005206_com.example.start.JPG" class="img-responsive" height="400"> 
-<img src="images/Screenshot_20200519_005317_com.example.start.JPG" class="img-responsive" height="400"> 
-<img src="images/Screenshot_20200519_005821_com.example.start.JPG" class="img-responsive" height="400"> 
-<img src="images/Screenshot_20200519_005227_com.example.start.JPG" class="img-responsive" height="400"> 
+<img src="images/Screenshot_20200519_005206_com.example.start.jpg" class="img-responsive" height="400"> 
+<img src="images/Screenshot_20200519_005317_com.example.start.jpg" class="img-responsive" height="400"> 
+<img src="images/Screenshot_20200519_005821_com.example.start.jpg" class="img-responsive" height="400"> 
+<img src="images/Screenshot_20200519_005227_com.example.start.jpg" class="img-responsive" height="400"> 
 </p>
 
  
